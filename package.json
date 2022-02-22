@@ -1,0 +1,42 @@
+{
+  "name": "basic-docker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "migration": "mikro-orm migration:create --initial",
+    "dev": "tsnd --respawn --transpile-only --clear -r dotenv/config --inspect=0.0.0.0:9229 ./src/server.ts",
+    "debug": "tsnd --transpile-only --inspect-brk --respawn --ignore-watch node_modules -r dotenv/config ./src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@mikro-orm/cli": "^5.0.3",
+    "@mikro-orm/core": "^5.0.3",
+    "@mikro-orm/migrations": "^5.0.3",
+    "@mikro-orm/postgresql": "^5.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/module-alias": "^2.0.1",
+    "module-alias": "^2.2.2",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/config/orm-config.ts",
+      "./src/dist/orm-config.js"
+    ]
+  }
+}
