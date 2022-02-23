@@ -5,7 +5,8 @@
   "scripts": {
     "migration": "mikro-orm migration:create --initial",
     "dev": "tsnd --respawn --transpile-only --clear -r dotenv/config --inspect=0.0.0.0:9229 ./src/server.ts",
-    "debug": "tsnd --transpile-only --inspect-brk --respawn --ignore-watch node_modules -r dotenv/config ./src/server.ts"
+    "debug": "tsnd --transpile-only --inspect-brk --respawn --ignore-watch node_modules -r dotenv/config ./src/server.ts",
+    "build": "tsc -p tsconfig-build.json"
   },
   "keywords": [],
   "author": "",
