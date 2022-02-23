@@ -16,6 +16,6 @@ export default {
   dbName: process.env.PG_DB,
   user: process.env.PG_USER,
   password: process.env.PG_PASS,
-  debug: true,
+  debug: false,
   logger: (message: string) => console.info('MikroORM @', message),
 } as Parameters<typeof MikroORM.init>[0]
