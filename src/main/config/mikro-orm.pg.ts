@@ -13,12 +13,15 @@ export const DI = {} as {
 export const initializeORM = async () => {
   DI.orm = await MikroORM.init(data)
 
-  const generator = DI.orm.getSchemaGenerator()
+  const migrator = DI.orm.getMigrator()
+  await migrator.createMigration()
+  await migrator.up()
 
   // ! Uncomment the following lines to drop/create the schema.
-  // await generator.dropSchema();
-  // await generator.createSchema();
-  // await generator.updateSchema();
+  // const generator = DI.orm.getSchemaGenerator()
+  // await generator.dropSchema()
+  // await generator.createSchema()
+  // await generator.updateSchema()
 
   DI.em = DI.orm.em
   DI.usersRepository = DI.orm.em.getRepository(User)
