@@ -70,7 +70,8 @@ I created this app in order to demonstrate the Clean Architecture / SOLID princi
 
 > 1. **git clone https://github.com/thomascouto/backend-crud-app.git**
 > 2. **docker-compose up -d (adjust docker yml file if for your needs)**
-> 3. **npm run dev**
+> 3. npx mikro-orm migration:create --initial
+> 4. **npm run dev**
 
 # Available routes / entities
 
