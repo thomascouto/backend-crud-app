@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node -r dotenv/config dist/server.js",
-    "migration": "mikro-orm migration:create --initial",
+    "migration": "npx mikro-orm migration:create --initial",
     "dev": "tsnd --respawn --transpile-only --clear -r dotenv/config --inspect=0.0.0.0:9229 ./src/server.ts",
     "debug": "tsnd --transpile-only --inspect-brk --respawn --ignore-watch node_modules -r dotenv/config ./src/server.ts",
     "build": "tsc -p tsconfig-build.json"
@@ -38,7 +38,10 @@
     "useTsNode": true,
     "configPaths": [
       "./src/main/config/orm-config.ts",
-      "./dist/main/orm-config.js"
+      "./dist/main/config/orm-config.js"
     ]
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
