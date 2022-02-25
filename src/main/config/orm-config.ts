@@ -3,9 +3,10 @@ import { MikroORM } from '@mikro-orm/core'
 
 export default {
   migrations: {
-    path: './dist/migrations',
-    pathTs: './src/migrations',
-    transactional: true,
+    path:
+      process.env.TS_NODE_DEV === undefined
+        ? 'src/migrations'
+        : 'dist/migrations',
   },
   schemaGenerator: {
     disableForeignKeys: false,
