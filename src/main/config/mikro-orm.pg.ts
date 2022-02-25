@@ -13,11 +13,13 @@ export const DI = {} as {
 export const initializeORM = async () => {
   DI.orm = await MikroORM.init(data)
 
+  // Local use, uncomment the following lines
   // const migrator = DI.orm.getMigrator()
   // await migrator.createMigration()
   // await migrator.up()
 
-  // ! Uncomment the following lines to drop/create the schema.
+  // ! Uncomment the following lines to drop/create the schema. Not needed if using migrations...
+  // ! Dev env. only
   // const generator = DI.orm.getSchemaGenerator()
   // await generator.dropSchema()
   // await generator.createSchema()

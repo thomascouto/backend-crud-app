@@ -8,10 +8,7 @@ export default {
         ? 'src/migrations'
         : 'dist/migrations',
   },
-  // schemaGenerator: {
-  //   disableForeignKeys: false,
-  //   createForeignKeyConstraints: true,
-  // },
+  // in case of local use, just comment line 17-19
   // you must uncomment the following lines to deploy in Heroku
   driverOptions: {
     connection: { ssl: { rejectUnauthorized: false } },
