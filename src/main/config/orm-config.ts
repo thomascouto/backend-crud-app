@@ -12,9 +12,9 @@ export default {
     createForeignKeyConstraints: true,
   },
   // you must uncomment the following lines to deploy in Heroku
-  // driverOptions: {
-  //   connection: { ssl: { rejectUnauthorized: false } },
-  // },
+  driverOptions: {
+    connection: { ssl: { rejectUnauthorized: false } },
+  },
   type: 'postgresql',
   entities: [User, Activity, BaseEntity],
   host: process.env.PG_HOST,
