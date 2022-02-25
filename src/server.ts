@@ -6,7 +6,7 @@ import { setupRoutes } from './main/config/setupRoutes'
 import { err } from './app/util/httpHelper'
 // import cors from 'cors'
 
-const port = process.env.SERVER_PORT || 3000
+const port = process.env.SERVER_PORT || 8080
 
 ;(async () => {
   const app = express()
