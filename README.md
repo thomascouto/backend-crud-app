@@ -69,9 +69,10 @@ I created this app in order to demonstrate the Clean Architecture / SOLID princi
 ## Usage
 
 > 1. **git clone https://github.com/thomascouto/backend-crud-app.git**
-> 2. **docker-compose up -d (adjust docker yml file if for your needs)**
-> 3. npx mikro-orm migration:create --initial
-> 4. **npm run dev**
+> 2. **docker-compose up -d (adjust docker yml file on your needs if you want)**
+>    3.0 Local Use: npx mikro-orm migration:create --initial
+>    3.1 Heroku Use: After deployment run the following: heroku run "npx mikro-orm schema:create -r --fk-checks" (I could not make 3.0 work on heroku because of session_replication_role variable).
+> 3. **npm run dev** (local dev mode)
 
 # Available routes / entities
 
